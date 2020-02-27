@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
     font-family: 'Open Sans', sans-serif;
+    outline: 0;
   }
 
   button a {

@@ -42,6 +42,9 @@ export const Content = styled.div`
   justify-content: center;
   height: 120px;
 
+  @media (max-width: 779px){
+    display: none;
+  }
 `;
 
 export const ContentLogo = styled.div`
@@ -99,6 +102,10 @@ export const Menu = styled.div`
   display: flex;
   justify-content: center;
   background: #ff1520;
+
+  @media (max-width: 779px){
+    display: none;
+  }
 `;
 
 export const MenuContent = styled.div`

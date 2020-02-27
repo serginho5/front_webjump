@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 //import Button from 'react-bootstrap/Button';
 //import Container from 'react-bootstrap/Container';
@@ -33,11 +34,11 @@ const Header = () => (
     <Menu>
       <MenuContent>
         <ul>
-          <a href="#"><li>PÁGINA INICIAL</li></a>
-          <a href="#"><li>CAMISETAS</li></a>
-          <a href="#"><li>CALÇAS</li></a>
-          <a href="#"><li>SAPATOS</li></a>
-          <a href="#"><li>CONTATOS</li></a>
+          <Link to="/"><li>PÁGINA INICIAL</li></ Link>
+          <Link to="/camisetas"><li>CAMISETAS</li></ Link>
+          <Link to="/calcas"><li>CALÇAS</li></ Link>
+          <Link to="/sapatos"><li>SAPATOS</li></ Link>
+          <Link to="/"><li>CONTATOS</li></ Link>
         </ul>
       </MenuContent>
     </Menu>

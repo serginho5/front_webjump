@@ -1,9 +1,10 @@
 import React from 'react';
+import Routes from '../../routes';
 import { Main, Container, Content, Colors, Colorbox } from './styles';
 
 const Sidebar = () => (
   <Main>
-    <p>Página principal > <a href="#">Sapatos</a></p>
+    <p>Página principal > <a href="#"></a></p>
     <Container>
       <Content>
         <h1>FILTRE POR</h1>

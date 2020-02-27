@@ -55,6 +55,8 @@ h1 {
 
 export const Card = styled.div`
   width: 170px;
+  position: relative;
+  height: 293px;
 
   h1 {
     font-size: 15px;
@@ -78,6 +80,8 @@ export const Card = styled.div`
     width: 100%;
     height: 34px;
     border: 0;
+    position: absolute;
+    bottom: 0;
 }
 `;
 

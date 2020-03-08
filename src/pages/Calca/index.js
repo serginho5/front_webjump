@@ -42,24 +42,23 @@ const Calca = () => {
       </Header>
       <MainCard>
         <ul>
-          <ul>
-            {calcas.map(calca => (
-              < li key={calca.id}>
-                <Card>
-                  <CardImg>
-                    <img src={calca.image} alt="" />
-                  </CardImg>
-                  <h1>{calca.name}</h1>
-                  <h3>R${calca.price}</h3>
-                  <button>COMPRAR</button>
-                </Card>
-              </li>
-            ))}
-          </ul>
+          {calcas.map(calca => (
+            < li key={calca.id}>
+              <Card>
+                <CardImg>
+                  <img src={calca.image} alt="" />
+                </CardImg>
+                <h1>{calca.name}</h1>
+                <h3>R${calca.price}</h3>
+                <button>COMPRAR</button>
+              </Card>
+            </li>
+          ))}
         </ul>
       </MainCard>
     </Container>
   )
 }
+
 
 export default Calca;

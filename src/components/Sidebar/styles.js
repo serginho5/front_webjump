@@ -7,12 +7,21 @@ export const Main = styled.div`
     color: #ff1520;
     text-decoration: none;
   }
+
+  @media screen and (max-width: 767px){
+      margin-left: 30px;
+      margin-right: 30px;
+    }
 `;
 
 export const Container = styled.div`
     border: 1px solid #cdc5c5;
     width: 270px;
     padding: 15px;
+
+    @media screen and (max-width: 767px){
+     width: 100%;
+    }
 `;
 
 export const Content = styled.div`

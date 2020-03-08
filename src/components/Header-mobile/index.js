@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo.png';
 import Buscar from '../../assets/search.png';
 import { Mobile, MobileHamburg, MobileLogo, MobileBusca } from './styles';
-import './styles.css';
+
 
 
 const HeaderMobile = () => (

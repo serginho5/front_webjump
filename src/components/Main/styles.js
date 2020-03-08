@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     display: flex;
-    margin-left: 20px;
+    margin-left: 10px;
     margin-top: 48px;
     flex: 1;
     flex-direction: column;
@@ -100,6 +100,7 @@ li {
     list-style: none;
     margin-top: 30px;
 }
+
 `;
 
 

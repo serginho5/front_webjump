@@ -6,6 +6,11 @@ export const Container = styled.div`
     margin-top: 48px;
     flex: 1;
     flex-direction: column;
+
+    @media screen and (max-width: 767px){
+      margin-left: 30px;
+      margin-right: 30px;
+    }
 `;
 
 export const Header = styled.div`
@@ -103,6 +108,12 @@ ul {
 li {
     list-style: none;
     margin-top: 30px;
+}
+
+@media screen and (max-width: 767px){
+  ul {
+    justify-content: space-around;
+}
 }
 `;
 

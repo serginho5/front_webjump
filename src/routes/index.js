@@ -1,10 +1,12 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+import ErrorMessage from '../components/ErrorMessage';
 import Home from '../pages/Home';
 import Camiseta from '../pages/Camisetas';
 import Calca from '../pages/Calca';
 import Sapatos from '../pages/Sapatos';
+import ResultsSearch from '../pages/ResultsSearch';
 
 const Routes = () => (
   <Switch>
@@ -12,6 +14,8 @@ const Routes = () => (
     <Route path="/camisetas" component={Camiseta} />
     <Route path="/calcas" component={Calca} />
     <Route path="/sapatos" component={Sapatos} />
+    <Route path="/items" component={ResultsSearch} />
+    <Route path="*" component={() => <ErrorMessage message="Está pagina não existe" />} />
   </Switch>
 );
 

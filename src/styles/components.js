@@ -11,4 +11,8 @@ export const Content = styled.div`
     width: 1024px!important;
     display: flex;
 }
+
+@media screen and (max-width: 767px){
+  width: 100%;
+}
 `;

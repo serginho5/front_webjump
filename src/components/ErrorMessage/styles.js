@@ -8,7 +8,7 @@ export const Container = styled.div`
    justify-content: center;
    align-items: center;
    height: 80vh;
-   min-width: 100% !important;
+   flex: 1;
 
    p {
       text-align: center;

@@ -31,19 +31,19 @@ const HeaderMobile = () => (
         <button type="button" data-toggle="modal" data-target="#buscar"><img src={Buscar} alt="buscar" /></button>
       </MobileBusca>
 
-      <div class="modal fade" id="buscar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Campo Busca</h5>
+      <div className="modal fade" id="buscar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">Campo Busca</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               <input type="text" placeholder="Digite aqui o que busca!" style={{ border: '0' }} />
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button type="button" class="btn btn-danger">Buscar</button>
             </div>
           </div>

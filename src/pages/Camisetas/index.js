@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Loading from '../../components/Loading';
 import api from '../../services/api';
 import { Container, Header, HeaderTop, HeaderMain, HeaderIcon, HeaderFilter, MainCard, Card, CardImg } from './styles';
 import Grid from '../../assets/grid_2.png';
@@ -6,11 +7,13 @@ import List from '../../assets/grid.png';
 
 function Camiseta() {
   const [camisetas, setCamisetas] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadItems() {
       const response = await api.get('/camiseta');
       setCamisetas(response.data);
+      setLoading(false);
     }
     loadItems();
   }, []
@@ -43,7 +46,7 @@ function Camiseta() {
       </Header>
       <MainCard>
         <ul>
-          {camisetas.map(camiseta => (
+          {loading ? <Loading /> : camisetas.map(camiseta => (
             < li key={camiseta.id}>
               <Card>
                 <CardImg>

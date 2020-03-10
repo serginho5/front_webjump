@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Loading from '../../components/Loading';
 import api from '../../services/api';
 import { Container, Header, HeaderTop, HeaderMain, HeaderIcon, HeaderFilter, MainCard, Card, CardImg } from './styles';
 import Grid from '../../assets/grid_2.png';
@@ -6,11 +7,13 @@ import List from '../../assets/grid.png';
 
 const Sapatos = () => {
   const [sapatos, setSapatos] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadItems() {
       const response = await api.get('/sapato');
       setSapatos(response.data);
+      setLoading(false);
     }
     loadItems();
   }, []
@@ -42,7 +45,7 @@ const Sapatos = () => {
       </Header>
       <MainCard>
         <ul>
-          {sapatos.map(sapato => (
+          {loading ? <Loading /> : sapatos.map(sapato => (
             < li key={sapato.id}>
               <Card>
                 <CardImg>

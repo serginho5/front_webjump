@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import Loading from '../../components/Loading';
 import api from '../../services/api';
 import { Container, Header, HeaderTop, HeaderMain, HeaderIcon, HeaderFilter, MainCard, Card, CardImg } from './styles';
 import Grid from '../../assets/grid_2.png';
 import List from '../../assets/grid.png';
 
+
 function Home() {
   const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadItems() {
       const response = await api.get('/items');
 
       setItems(response.data);
+      setLoading(false);
     }
     loadItems();
   }, []
@@ -43,7 +47,7 @@ function Home() {
       </Header>
       <MainCard>
         <ul>
-          {items.map(item => (
+          {loading ? <Loading /> : items.map(item => (
             <li key={item.id}>
               <Card>
                 <CardImg>

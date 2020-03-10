@@ -14,7 +14,7 @@ const Routes = () => (
     <Route path="/camisetas" component={Camiseta} />
     <Route path="/calcas" component={Calca} />
     <Route path="/sapatos" component={Sapatos} />
-    <Route path="/items" component={ResultsSearch} />
+    <Route path="/resultados" component={ResultsSearch} />
     <Route path="*" component={() => <ErrorMessage message="Está pagina não existe" />} />
   </Switch>
 );

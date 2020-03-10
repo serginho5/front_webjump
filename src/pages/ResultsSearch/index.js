@@ -1,30 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-
-import ErrorMessage from '../../components/ErrorMessage';
 import Loading from '../../components/Loading';
+import api from '../../services/api';
 import { Container, Header, HeaderTop, HeaderMain, HeaderIcon, HeaderFilter, MainCard, Card, CardImg } from './styles';
 import Grid from '../../assets/grid_2.png';
 import List from '../../assets/grid.png';
-import api from '../../services/api';
 
-const ResultsSearch = () => {
-  const [calcas, setCalcas] = useState([]);
+function ResultsSearch() {
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadItems() {
-      const response = await api.get('/calca');
-      setCalcas(response.data);
+      const response = await api.get('/items');
+
+      setItems(response.data);
+      setLoading(false);
     }
     loadItems();
   }, []
+
   )
 
   return (
     <Container>
       <Header>
         <HeaderTop>
-          <h1>Calças</h1>
+          <h1>Resultados de Busca</h1>
         </HeaderTop>
         <HeaderMain>
           <HeaderIcon>
@@ -46,18 +47,20 @@ const ResultsSearch = () => {
       </Header>
       <MainCard>
         <ul>
-          {calcas.map(calca => (
-            < li key={calca.id}>
+          {loading ? <Loading /> : items.map(item => (
+            <li key={item.id}>
               <Card>
                 <CardImg>
-                  <img src={calca.image} alt="" />
+                  <img src={item.image} alt="" />
                 </CardImg>
-                <h1>{calca.name}</h1>
-                <h3>R${calca.price}</h3>
+                <h1>{item.name}</h1>
+                <h3>R${item.price}</h3>
                 <button>COMPRAR</button>
               </Card>
             </li>
           ))}
+
+
         </ul>
       </MainCard>
     </Container>

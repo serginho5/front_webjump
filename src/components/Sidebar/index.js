@@ -1,5 +1,4 @@
 import React from 'react';
-import Routes from '../../routes';
 import { Main, Container, Content, Colors, Colorbox } from './styles';
 
 const Sidebar = () => (

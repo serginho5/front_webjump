@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Loading from '../../components/Loading';
 import api from '../../services/api';
 import { Container, Header, HeaderTop, HeaderMain, HeaderIcon, HeaderFilter, MainCard, Card, CardImg } from './styles';
 import Grid from '../../assets/grid_2.png';
@@ -6,11 +7,13 @@ import List from '../../assets/grid.png';
 
 const Calca = () => {
   const [calcas, setCalcas] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadItems() {
       const response = await api.get('/calca');
       setCalcas(response.data);
+      setLoading(false);
     }
     loadItems();
   }, []
@@ -42,7 +45,7 @@ const Calca = () => {
       </Header>
       <MainCard>
         <ul>
-          {calcas.map(calca => (
+          {loading ? <Loading /> : calcas.map(calca => (
             < li key={calca.id}>
               <Card>
                 <CardImg>

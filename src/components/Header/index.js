@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from 'react-bootstrap/Navbar';
 //import Button from 'react-bootstrap/Button';
 //import Container from 'react-bootstrap/Container';
 import { Container, Topbar, Content, ContentBusca, ContentLogo, Main, Form, Menu, MenuContent } from './styles';
@@ -38,7 +37,7 @@ const Header = () => (
           <Link to="/camisetas"><li>CAMISETAS</li></ Link>
           <Link to="/calcas"><li>CALÇAS</li></ Link>
           <Link to="/sapatos"><li>SAPATOS</li></ Link>
-          <Link to="/"><li>CONTATOS</li></ Link>
+          <Link to="/resultados"><li>CONTATOS</li></ Link>
         </ul>
       </MenuContent>
     </Menu>
